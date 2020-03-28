@@ -1,14 +1,14 @@
 const express = require('express');
 const routes = require('./routes');
-
+const cors = require('cors');
 const app = express();
+
+
+app.use(cors("*"));
 
 app.use(express.json());  // Informo o express que vai receber dados no 
                           // corpo das requisições  no formato json
-
-
 app.use(routes);
-
 
 app.listen(3333);
 
